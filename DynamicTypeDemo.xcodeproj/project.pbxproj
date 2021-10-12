@@ -3,20 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9C28154A252499A700A0D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C281549252499A700A0D08B /* AppDelegate.swift */; };
 		9C28154C252499A700A0D08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28154B252499A700A0D08B /* SceneDelegate.swift */; };
-		9C28154E252499A700A0D08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28154D252499A700A0D08B /* ViewController.swift */; };
 		9C281551252499A700A0D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C28154F252499A700A0D08B /* Main.storyboard */; };
 		9C281553252499AA00A0D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C281552252499AA00A0D08B /* Assets.xcassets */; };
 		9C281556252499AA00A0D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C281554252499AA00A0D08B /* LaunchScreen.storyboard */; };
 		9C28181425249A1B00A0D08B /* CGFloat+Scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181325249A1B00A0D08B /* CGFloat+Scaled.swift */; };
 		9C28181B25249AC300A0D08B /* NSDynamicLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */; };
 		9C28181E25249AE600A0D08B /* AccessibleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181D25249AE600A0D08B /* AccessibleStackView.swift */; };
-		9C28182125249AF500A0D08B /* DynamicStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28182025249AF500A0D08B /* DynamicStackView.swift */; };
+		9CA7324E2715F5AA001C02EA /* ScrollingContentViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */; };
+		9CA732522715F79F001C02EA /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732512715F79F001C02EA /* TextViewController.swift */; };
+		9CA732552716002F001C02EA /* CornersAndSizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732542716002F001C02EA /* CornersAndSizesViewController.swift */; };
 		9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */; };
 		9CBA388D2524A554001A33ED /* SwitchingAccessibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */; };
 		9CCB4AC825249FD200C7C0C1 /* UIView+LargeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB4AC725249FD200C7C0C1 /* UIView+LargeContent.swift */; };
@@ -29,7 +30,6 @@
 		9C281546252499A700A0D08B /* DynamicTypeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTypeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C281549252499A700A0D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C28154B252499A700A0D08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9C28154D252499A700A0D08B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C281550252499A700A0D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C281552252499AA00A0D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C281555252499AA00A0D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,7 +37,8 @@
 		9C28181325249A1B00A0D08B /* CGFloat+Scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Scaled.swift"; sourceTree = "<group>"; };
 		9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDynamicLayoutConstraint.swift; sourceTree = "<group>"; };
 		9C28181D25249AE600A0D08B /* AccessibleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleStackView.swift; sourceTree = "<group>"; };
-		9C28182025249AF500A0D08B /* DynamicStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStackView.swift; sourceTree = "<group>"; };
+		9CA732512715F79F001C02EA /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		9CA732542716002F001C02EA /* CornersAndSizesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornersAndSizesViewController.swift; sourceTree = "<group>"; };
 		9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDefaultViewController.swift; sourceTree = "<group>"; };
 		9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingAccessibleViewController.swift; sourceTree = "<group>"; };
 		9CCB4AC725249FD200C7C0C1 /* UIView+LargeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LargeContent.swift"; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA7324E2715F5AA001C02EA /* ScrollingContentViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,23 +80,47 @@
 			children = (
 				9C281549252499A700A0D08B /* AppDelegate.swift */,
 				9C28154B252499A700A0D08B /* SceneDelegate.swift */,
-				9C28154D252499A700A0D08B /* ViewController.swift */,
-				9C28181325249A1B00A0D08B /* CGFloat+Scaled.swift */,
-				9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */,
-				9C28181D25249AE600A0D08B /* AccessibleStackView.swift */,
-				9C28182025249AF500A0D08B /* DynamicStackView.swift */,
-				9CCB4AD02524A34400C7C0C1 /* SwitchingViewController.swift */,
-				9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */,
-				9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */,
+				9CA732502715F6EB001C02EA /* Lib */,
+				9CA7324F2715F6B0001C02EA /* SwitchingViewController */,
 				9C28154F252499A700A0D08B /* Main.storyboard */,
-				9CCB4AC725249FD200C7C0C1 /* UIView+LargeContent.swift */,
 				9C281552252499AA00A0D08B /* Assets.xcassets */,
 				9C281554252499AA00A0D08B /* LaunchScreen.storyboard */,
 				9C281557252499AA00A0D08B /* Info.plist */,
-				9CCB4ACA2524A0D600C7C0C1 /* StateViewController.swift */,
-				9CCB4ACD2524A11200C7C0C1 /* UIView+Pinning.swift */,
+				9CA732532715F7A3001C02EA /* ViewControllers */,
 			);
 			path = DynamicTypeDemo;
+			sourceTree = "<group>";
+		};
+		9CA7324F2715F6B0001C02EA /* SwitchingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9CCB4AD02524A34400C7C0C1 /* SwitchingViewController.swift */,
+				9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */,
+				9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */,
+			);
+			path = SwitchingViewController;
+			sourceTree = "<group>";
+		};
+		9CA732502715F6EB001C02EA /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9CCB4ACD2524A11200C7C0C1 /* UIView+Pinning.swift */,
+				9CCB4AC725249FD200C7C0C1 /* UIView+LargeContent.swift */,
+				9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */,
+				9C28181325249A1B00A0D08B /* CGFloat+Scaled.swift */,
+				9C28181D25249AE600A0D08B /* AccessibleStackView.swift */,
+				9CCB4ACA2524A0D600C7C0C1 /* StateViewController.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		9CA732532715F7A3001C02EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CA732512715F79F001C02EA /* TextViewController.swift */,
+				9CA732542716002F001C02EA /* CornersAndSizesViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +139,9 @@
 			dependencies = (
 			);
 			name = DynamicTypeDemo;
+			packageProductDependencies = (
+				9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */,
+			);
 			productName = DynamicTypeDemo;
 			productReference = 9C281546252499A700A0D08B /* DynamicTypeDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 9C28153D252499A700A0D08B;
+			packageReferences = (
+				9CA7324C2715F5AA001C02EA /* XCRemoteSwiftPackageReference "ScrollingContentViewController" */,
+			);
 			productRefGroup = 9C281547252499A700A0D08B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,7 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C28154E252499A700A0D08B /* ViewController.swift in Sources */,
 				9C28154A252499A700A0D08B /* AppDelegate.swift in Sources */,
 				9C28181425249A1B00A0D08B /* CGFloat+Scaled.swift in Sources */,
 				9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */,
@@ -175,11 +206,12 @@
 				9C28181E25249AE600A0D08B /* AccessibleStackView.swift in Sources */,
 				9C28154C252499A700A0D08B /* SceneDelegate.swift in Sources */,
 				9CCB4ACE2524A11200C7C0C1 /* UIView+Pinning.swift in Sources */,
-				9C28182125249AF500A0D08B /* DynamicStackView.swift in Sources */,
 				9CCB4AC825249FD200C7C0C1 /* UIView+LargeContent.swift in Sources */,
 				9CCB4AD12524A34400C7C0C1 /* SwitchingViewController.swift in Sources */,
 				9C28181B25249AC300A0D08B /* NSDynamicLayoutConstraint.swift in Sources */,
+				9CA732552716002F001C02EA /* CornersAndSizesViewController.swift in Sources */,
 				9CBA388D2524A554001A33ED /* SwitchingAccessibleViewController.swift in Sources */,
+				9CA732522715F79F001C02EA /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alldmeat.DynamicTypeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -355,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alldmeat.DynamicTypeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -381,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9CA7324C2715F5AA001C02EA /* XCRemoteSwiftPackageReference "ScrollingContentViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drewolbrich/ScrollingContentViewController.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CA7324C2715F5AA001C02EA /* XCRemoteSwiftPackageReference "ScrollingContentViewController" */;
+			productName = ScrollingContentViewController;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9C28153E252499A700A0D08B /* Project object */;
 }

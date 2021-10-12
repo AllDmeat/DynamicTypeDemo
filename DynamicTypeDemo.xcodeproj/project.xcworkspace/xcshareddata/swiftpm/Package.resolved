@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ScrollingContentViewController",
+        "repositoryURL": "https://github.com/drewolbrich/ScrollingContentViewController.git",
+        "state": {
+          "branch": null,
+          "revision": "1024939b76bf4e2d1ee7372de5a274cf73dcb01b",
+          "version": "1.6.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

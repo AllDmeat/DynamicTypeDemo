@@ -14,7 +14,7 @@ public extension UIView {
     }
     
     func pinToBounds(_ view: UIView,
-                     with insets: UIEdgeInsets = .zero) {
+                     with insets: NSDirectionalEdgeInsets = .zero) {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -23,9 +23,9 @@ public extension UIView {
             view.bottomAnchor.constraint(equalTo: bottomAnchor,
                                          constant: insets.bottom),
             view.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                          constant: insets.left),
+                                          constant: insets.leading),
             view.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                           constant: insets.right),
+                                           constant: insets.trailing),
         ])
     }
 }
