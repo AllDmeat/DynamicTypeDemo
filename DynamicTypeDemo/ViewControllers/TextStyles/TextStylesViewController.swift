@@ -19,31 +19,47 @@ class TextStylesViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        viewModel.sections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        viewModel.sections[section].title
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.items.count
+        viewModel.sections[section].items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCellOf(type: TextStyleCell.self, for: indexPath)
-        cell.viewModel = viewModel.items[indexPath.row]
+        cell.viewModel = viewModel.sections[indexPath.section].items[indexPath.row]
         return cell
     }
 }
 
 extension TextStylesViewController {
     struct ViewModel {
-        let items: [TextStyleCell.ViewModel]
+        let sections: [Section]
+        
+        struct Section {
+            let title: String
+            let items: [TextStyleCell.ViewModel]
+        }
     }
 }
 
 extension TextStylesViewController {
     class ViewModelFactory {
         func createViewModel() -> ViewModel {
+            .init(sections: [
+                defaultFontStylesSection()
+            ])
+        }
+        
+        private func defaultFontStylesSection() -> ViewModel.Section {
             let items = UIFont.TextStyle.allCases.map(TextStyleCell.ViewModel.init)
-            return .init(items: items)
+            return .init(title: "Default text styles",
+                         items: items)
         }
     }
 }
