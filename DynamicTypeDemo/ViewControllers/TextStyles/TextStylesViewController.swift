@@ -33,7 +33,11 @@ class TextStylesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        viewModel.sections[section].title
+        viewModel.sections[section].headerTitle
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        viewModel.sections[section].footerTitle
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,15 +56,16 @@ extension TextStylesViewController {
         let sections: [Section]
         
         struct Section {
-            let title: String
+            let headerTitle: String
             let items: [Item]
+            let footerTitle: String
             
             struct Item {
                 let text: String
                 let font: UIFont
                 
                 static let empty = Item(text: "",
-                                             font: UIFont.preferredFont(forTextStyle: .body))
+                                        font: UIFont.preferredFont(forTextStyle: .body))
             }
         }
     }
@@ -77,39 +82,66 @@ extension TextStylesViewController {
         }
         
         private func defaultFontStylesSection() -> ViewModel.Section {
-            .init(title: "Default text styles",
-                  items: UIFont.TextStyle.allCases.map(ViewModel.Section.Item.init))
+            .init(headerTitle: "Default text styles",
+                  items: UIFont.TextStyle.allCases.map(ViewModel.Section.Item.init),
+                  footerTitle:
+"""
+UIFont.preferredFont(forTextStyle:)
+Fonts are scaled by default. Adjusting to current content size automaticaly.
+"""
+            )
         }
         
         private func customScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
-            .init(title: "Custom scaling",
+            .init(headerTitle: "Font size scaling",
                   items: [
                     .italicSystemFont(for: traitCollection),
                     .monospacedSystemFont(for: traitCollection)
-                  ])
+                  ],
+                  footerTitle: """
+UIFontMetrics(forTextStyle:).scaledValue(for:compatibleWith:)
+Scaling not font, but it's size. Fonts don't adjust automatically, unless size is recalculated and font is set again.
+"""
+            )
         }
         
         private func defaultScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
-            let scaledFonts = UIFont.availableFonts.map { font in
+            let scaledFonts = UIFont.availableFonts.random(10).map { font in
                 UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
             }
-            return .init(title: "Preinstalled fonts",
-                         items: scaledFonts.map(ViewModel.Section.Item.init))
+            return .init(headerTitle: "Font scaling",
+                         items: scaledFonts.map(ViewModel.Section.Item.init),
+                         footerTitle: """
+UIFontMetrics(forTextStyle:).scaledValue(for:compatibleWith:)
+Fonts are scaled by default. Adjusting to current content size automaticaly.
+"""
+            )
         }
     }
 }
 
 extension UIFont {
     static var availableFontNames: [String] {
-        UIFont.familyNames.flatMap { UIFont.fontNames(forFamilyName: $0) }
+        UIFont.familyNames.flatMap { UIFont.fontNames(forFamilyName: $0) }.unique()
     }
     
     static var availableFonts: [UIFont] {
         UIFont.availableFontNames.compactMap { name in
             UIFont(name: name,
                    size: UIFont.labelFontSize)
-        }
+        }.unique()
     }
+}
+
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var seen: [Iterator.Element: Bool] = [:]
+        return filter { seen.updateValue(true, forKey: $0) == nil }
+    }
+}
+
+extension Collection {
+    func random(_ n: Int) -> ArraySlice<Element> { shuffled().prefix(n) }
 }
 
 extension TextStylesViewController.ViewModel.Section.Item {

@@ -14,6 +14,11 @@ class TextStyleCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        NSLayoutConstraint.activate([
+            contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44)
+        ])
+        
         label.adjustsFontForContentSizeCategory = true
     }
     
