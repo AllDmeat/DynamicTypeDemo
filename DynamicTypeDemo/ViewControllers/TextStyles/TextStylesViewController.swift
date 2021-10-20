@@ -93,10 +93,11 @@ Fonts are scaled by default. Adjusting to current content size automaticaly.
         }
         
         private func customScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
-            .init(headerTitle: "Font size scaling",
+            .init(headerTitle: "System fonts",
                   items: [
                     .italicSystemFont(for: traitCollection),
-                    .monospacedSystemFont(for: traitCollection)
+                    .monospacedSystemFont(for: traitCollection),
+                    .monospacedDigitsSystemFont(for: traitCollection)
                   ],
                   footerTitle: """
 UIFontMetrics(forTextStyle:).scaledValue(for:compatibleWith:)
@@ -109,7 +110,7 @@ Scaling not font, but it's size. Fonts don't adjust automatically, unless size i
             let scaledFonts = UIFont.availableFonts.random(10).map { font in
                 UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
             }
-            return .init(headerTitle: "Font scaling",
+            return .init(headerTitle: "Custom fonts (preinstalled on iOS)",
                          items: scaledFonts.map(ViewModel.Section.Item.init),
                          footerTitle: """
 UIFontMetrics(forTextStyle:).scaledValue(for:compatibleWith:)
@@ -156,6 +157,15 @@ extension TextStylesViewController.ViewModel.Section.Item {
         .init(
             text: "Monospaced system font",
             font: .monospacedSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection), weight: .regular)
+        )
+    }
+    
+    static func monospacedDigitsSystemFont(for traitCollection: UITraitCollection) -> Self {
+        .init(
+            text: """
+Monospaced digits system font, 100
+""",
+            font: .monospacedDigitSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection), weight: .regular)
         )
     }
 }
