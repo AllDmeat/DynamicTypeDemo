@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C11AE0B27208F0D0003E338 /* TextStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11AE0A27208F0D0003E338 /* TextStyleCell.swift */; };
+		9C11AE0D27208F240003E338 /* TextStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C11AE0C27208F240003E338 /* TextStyleCell.xib */; };
+		9C11B406272096860003E338 /* UITableView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11B405272096860003E338 /* UITableView+Helpers.swift */; };
 		9C28154A252499A700A0D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C281549252499A700A0D08B /* AppDelegate.swift */; };
 		9C28154C252499A700A0D08B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28154B252499A700A0D08B /* SceneDelegate.swift */; };
 		9C281551252499A700A0D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C28154F252499A700A0D08B /* Main.storyboard */; };
@@ -16,7 +19,7 @@
 		9C28181B25249AC300A0D08B /* NSDynamicLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */; };
 		9C28181E25249AE600A0D08B /* AccessibleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181D25249AE600A0D08B /* AccessibleStackView.swift */; };
 		9CA7324E2715F5AA001C02EA /* ScrollingContentViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */; };
-		9CA732522715F79F001C02EA /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732512715F79F001C02EA /* TextViewController.swift */; };
+		9CA732522715F79F001C02EA /* TextStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732512715F79F001C02EA /* TextStylesViewController.swift */; };
 		9CA732552716002F001C02EA /* CornersAndSizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732542716002F001C02EA /* CornersAndSizesViewController.swift */; };
 		9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */; };
 		9CBA388D2524A554001A33ED /* SwitchingAccessibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C11AE0A27208F0D0003E338 /* TextStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleCell.swift; sourceTree = "<group>"; };
+		9C11AE0C27208F240003E338 /* TextStyleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextStyleCell.xib; sourceTree = "<group>"; };
+		9C11B405272096860003E338 /* UITableView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helpers.swift"; sourceTree = "<group>"; };
 		9C281546252499A700A0D08B /* DynamicTypeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTypeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C281549252499A700A0D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C28154B252499A700A0D08B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +43,7 @@
 		9C28181325249A1B00A0D08B /* CGFloat+Scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Scaled.swift"; sourceTree = "<group>"; };
 		9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDynamicLayoutConstraint.swift; sourceTree = "<group>"; };
 		9C28181D25249AE600A0D08B /* AccessibleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleStackView.swift; sourceTree = "<group>"; };
-		9CA732512715F79F001C02EA /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		9CA732512715F79F001C02EA /* TextStylesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStylesViewController.swift; sourceTree = "<group>"; };
 		9CA732542716002F001C02EA /* CornersAndSizesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornersAndSizesViewController.swift; sourceTree = "<group>"; };
 		9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDefaultViewController.swift; sourceTree = "<group>"; };
 		9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingAccessibleViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +65,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C11AE0927208EF40003E338 /* TextStyles */ = {
+			isa = PBXGroup;
+			children = (
+				9CA732512715F79F001C02EA /* TextStylesViewController.swift */,
+				9C11B405272096860003E338 /* UITableView+Helpers.swift */,
+				9C11AE0A27208F0D0003E338 /* TextStyleCell.swift */,
+				9C11AE0C27208F240003E338 /* TextStyleCell.xib */,
+			);
+			path = TextStyles;
+			sourceTree = "<group>";
+		};
 		9C28153D252499A700A0D08B = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +134,7 @@
 		9CA732532715F7A3001C02EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9CA732512715F79F001C02EA /* TextViewController.swift */,
+				9C11AE0927208EF40003E338 /* TextStyles */,
 				9CA732542716002F001C02EA /* CornersAndSizesViewController.swift */,
 			);
 			path = ViewControllers;
@@ -186,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C11AE0D27208F240003E338 /* TextStyleCell.xib in Resources */,
 				9C281556252499AA00A0D08B /* LaunchScreen.storyboard in Resources */,
 				9C281553252499AA00A0D08B /* Assets.xcassets in Resources */,
 				9C281551252499A700A0D08B /* Main.storyboard in Resources */,
@@ -200,9 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C28154A252499A700A0D08B /* AppDelegate.swift in Sources */,
+				9C11B406272096860003E338 /* UITableView+Helpers.swift in Sources */,
 				9C28181425249A1B00A0D08B /* CGFloat+Scaled.swift in Sources */,
 				9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */,
 				9CCB4ACB2524A0D600C7C0C1 /* StateViewController.swift in Sources */,
+				9C11AE0B27208F0D0003E338 /* TextStyleCell.swift in Sources */,
 				9C28181E25249AE600A0D08B /* AccessibleStackView.swift in Sources */,
 				9C28154C252499A700A0D08B /* SceneDelegate.swift in Sources */,
 				9CCB4ACE2524A11200C7C0C1 /* UIView+Pinning.swift in Sources */,
@@ -211,7 +231,7 @@
 				9C28181B25249AC300A0D08B /* NSDynamicLayoutConstraint.swift in Sources */,
 				9CA732552716002F001C02EA /* CornersAndSizesViewController.swift in Sources */,
 				9CBA388D2524A554001A33ED /* SwitchingAccessibleViewController.swift in Sources */,
-				9CA732522715F79F001C02EA /* TextViewController.swift in Sources */,
+				9CA732522715F79F001C02EA /* TextStylesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
