@@ -45,13 +45,6 @@ class TextStylesViewController: UITableViewController {
         cell.viewModel = viewModel.sections[indexPath.section].items[indexPath.row]
         return cell
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        // try not to update whole view model in production code just for font size adjustment
-        viewModel = factory.createViewModel(for: traitCollection)
-    }
 }
 
 extension TextStylesViewController {
@@ -60,7 +53,15 @@ extension TextStylesViewController {
         
         struct Section {
             let title: String
-            let items: [TextStyleCell.ViewModel]
+            let items: [Item]
+            
+            struct Item {
+                let text: String
+                let font: UIFont
+                
+                static let empty = Item(text: "",
+                                             font: UIFont.preferredFont(forTextStyle: .body))
+            }
         }
     }
 }
@@ -70,42 +71,30 @@ extension TextStylesViewController {
         func createViewModel(for traitCollection: UITraitCollection) -> ViewModel {
             .init(sections: [
                 defaultFontStylesSection(),
-                customFontStylesSection(for: traitCollection),
-                preinstalledFonts(for: traitCollection)
+                customScaling(for: traitCollection),
+                defaultScaling(for: traitCollection)
             ])
         }
         
         private func defaultFontStylesSection() -> ViewModel.Section {
-            let items = UIFont.TextStyle.allCases.map(TextStyleCell.ViewModel.init)
-            return .init(title: "Default text styles",
-                         items: items)
+            .init(title: "Default text styles",
+                  items: UIFont.TextStyle.allCases.map(ViewModel.Section.Item.init))
         }
         
-        private func customFontStylesSection(for traitCollection: UITraitCollection) -> ViewModel.Section {
-            .init(title: "Custom text styles",
+        private func customScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
+            .init(title: "Custom scaling",
                   items: [
                     .italicSystemFont(for: traitCollection),
                     .monospacedSystemFont(for: traitCollection)
                   ])
         }
         
-        private func preinstalledFonts(for traitCollection: UITraitCollection) -> ViewModel.Section {
-
-            let availableFonts = UIFont.availableFontNames.compactMap { name in
-                UIFont(name: name,
-                       size: UIFont.systemFontSize.scaled(for: traitCollection))
+        private func defaultScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
+            let scaledFonts = UIFont.availableFonts.map { font in
+                UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
             }
-            
-            
-            let items = availableFonts.map { font in
-                TextStyleCell.ViewModel(
-                    text: font.fontName,
-                    font: font
-                )
-            }
-            
             return .init(title: "Preinstalled fonts",
-                         items: items)
+                         items: scaledFonts.map(ViewModel.Section.Item.init))
         }
     }
 }
@@ -114,28 +103,42 @@ extension UIFont {
     static var availableFontNames: [String] {
         UIFont.familyNames.flatMap { UIFont.fontNames(forFamilyName: $0) }
     }
+    
+    static var availableFonts: [UIFont] {
+        UIFont.availableFontNames.compactMap { name in
+            UIFont(name: name,
+                   size: UIFont.labelFontSize)
+        }
+    }
 }
 
-extension TextStyleCell.ViewModel {
+extension TextStylesViewController.ViewModel.Section.Item {
     static func italicSystemFont(for traitCollection: UITraitCollection) -> Self {
         .init(
             text: "Italic system font",
-            font: .italicSystemFont(ofSize: UIFont.systemFontSize.scaled(for: traitCollection))
+            font: .italicSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection))
         )
     }
     
     static func monospacedSystemFont(for traitCollection: UITraitCollection) -> Self {
         .init(
             text: "Monospaced system font",
-            font: .monospacedSystemFont(ofSize: UIFont.systemFontSize.scaled(for: traitCollection), weight: .regular)
+            font: .monospacedSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection), weight: .regular)
         )
     }
 }
 
-extension TextStyleCell.ViewModel {
+extension TextStylesViewController.ViewModel.Section.Item {
     init(_ style: UIFont.TextStyle) {
         self.init(text: style.title,
                   font: UIFont.preferredFont(forTextStyle: style))
+    }
+    
+    init(_ font: UIFont) {
+        self.init(
+            text: font.fontName,
+            font: font
+        )
     }
 }
 

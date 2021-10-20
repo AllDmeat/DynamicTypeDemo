@@ -17,24 +17,14 @@ class TextStyleCell: UITableViewCell {
         label.adjustsFontForContentSizeCategory = true
     }
     
-    var viewModel: ViewModel = .empty {
+    var viewModel: TextStylesViewController.ViewModel.Section.Item = .empty {
         didSet {
             update(with: viewModel)
         }
     }
     
-    private func update(with viewModel: ViewModel) {
+    private func update(with viewModel: TextStylesViewController.ViewModel.Section.Item) {
         label.text = viewModel.text
         label.font = viewModel.font
-    }
-}
-
-extension TextStyleCell {
-    struct ViewModel {
-        let text: String
-        let font: UIFont
-        
-        static let empty = ViewModel(text: "",
-                                     font: UIFont.preferredFont(forTextStyle: .body))
     }
 }
