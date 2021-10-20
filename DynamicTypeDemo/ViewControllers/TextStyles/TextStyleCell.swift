@@ -25,15 +25,16 @@ class TextStyleCell: UITableViewCell {
     
     private func update(with viewModel: ViewModel) {
         label.text = viewModel.text
-        label.font = UIFont.preferredFont(forTextStyle: viewModel.style)
+        label.font = viewModel.font
     }
 }
 
 extension TextStyleCell {
     struct ViewModel {
         let text: String
-        let style: UIFont.TextStyle
+        let font: UIFont
         
-        static let empty = ViewModel(text: "", style: .body)
+        static let empty = ViewModel(text: "",
+                                     font: UIFont.preferredFont(forTextStyle: .body))
     }
 }

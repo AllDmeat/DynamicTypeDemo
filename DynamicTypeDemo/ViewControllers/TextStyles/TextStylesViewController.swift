@@ -51,7 +51,7 @@ extension TextStylesViewController {
 extension TextStyleCell.ViewModel {
     init(_ style: UIFont.TextStyle) {
         self.init(text: style.title,
-                  style: style)
+                  font: UIFont.preferredFont(forTextStyle: style))
     }
 }
 
