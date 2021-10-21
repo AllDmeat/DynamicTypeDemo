@@ -61,8 +61,22 @@ extension TextStylesViewController {
             let footerTitle: String
             
             struct Item {
+                internal init(text: String,
+                              font: UIFont,
+                              minimumContentSizeCategory: UIContentSizeCategory? = nil,
+                              maximumContentSizeCategory: UIContentSizeCategory? = nil
+                ) {
+                    self.text = text
+                    self.font = font
+                    self.minimumContentSizeCategory = minimumContentSizeCategory
+                    self.maximumContentSizeCategory = maximumContentSizeCategory
+                }
+                
                 let text: String
                 let font: UIFont
+                
+                let minimumContentSizeCategory: UIContentSizeCategory?
+                let maximumContentSizeCategory: UIContentSizeCategory?
                 
                 static let empty = Item(text: "",
                                         font: UIFont.preferredFont(forTextStyle: .body))
@@ -75,46 +89,44 @@ extension TextStylesViewController {
     class ViewModelFactory {
         func createViewModel(for traitCollection: UITraitCollection) -> ViewModel {
             .init(sections: [
-                defaultFontStylesSection(),
-                customScaling(for: traitCollection),
-                defaultScaling(for: traitCollection)
+                textStylesBasedFontsSection(),
+                systemFontsSection(minSize: .accessibilityMedium, maxSize: nil),
+                systemFontsSection(minSize: nil, maxSize: .accessibilityMedium),
+                preinstalledFontsSection()
             ])
         }
         
-        private func defaultFontStylesSection() -> ViewModel.Section {
+        private func textStylesBasedFontsSection() -> ViewModel.Section {
             .init(headerTitle: "Default text styles",
                   items: UIFont.TextStyle.allCases.map(ViewModel.Section.Item.init),
                   footerTitle:
 """
 UIFont.preferredFont(forTextStyle:)
-Fonts are scaled by default. Adjusting to current content size automaticaly.
 """
             )
         }
         
-        private func customScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
+        private func systemFontsSection(minSize: UIContentSizeCategory?,
+                                        maxSize: UIContentSizeCategory?) -> ViewModel.Section {
             .init(headerTitle: "System fonts",
                   items: [
-                    .italicSystemFont(for: traitCollection),
-                    .monospacedSystemFont(for: traitCollection),
-                    .monospacedDigitsSystemFont(for: traitCollection)
+                    .italicSystemFont(minSize: minSize, maxSize: maxSize),
+                    .monospacedSystemFont(minSize: minSize, maxSize: maxSize)
                   ],
                   footerTitle: """
 UIFontMetrics(forTextStyle:).scaledValue(for:compatibleWith:)
-Scaling not font, but it's size. Fonts don't adjust automatically, unless size is recalculated and font is set again.
 """
             )
         }
         
-        private func defaultScaling(for traitCollection: UITraitCollection) -> ViewModel.Section {
-            let scaledFonts = UIFont.availableFonts.random(10).map { font in
-                UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        private func preinstalledFontsSection() -> ViewModel.Section {
+            let scalingFonts = UIFont.availableFonts.random(10).map { font in
+                font.scaling()
             }
             return .init(headerTitle: "Custom fonts (preinstalled on iOS)",
-                         items: scaledFonts.map(ViewModel.Section.Item.init),
+                         items: scalingFonts.map(ViewModel.Section.Item.init),
                          footerTitle: """
 UIFontMetrics(forTextStyle:).scaledValue(for:compatibleWith:)
-Fonts are scaled by default. Adjusting to current content size automaticaly.
 """
             )
         }
@@ -146,27 +158,31 @@ extension Collection {
 }
 
 extension TextStylesViewController.ViewModel.Section.Item {
-    static func italicSystemFont(for traitCollection: UITraitCollection) -> Self {
+    static func italicSystemFont(minSize: UIContentSizeCategory?,
+                                 maxSize: UIContentSizeCategory?) -> Self {
         .init(
             text: "Italic system font",
-            font: .italicSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection))
+            font: .italicSystemFont(ofSize: UIFont.labelFontSize).scaling(),
+            minimumContentSizeCategory: minSize,
+            maximumContentSizeCategory: maxSize
         )
     }
     
-    static func monospacedSystemFont(for traitCollection: UITraitCollection) -> Self {
+    static func monospacedSystemFont(minSize: UIContentSizeCategory?,
+                                     maxSize: UIContentSizeCategory?) -> Self {
         .init(
             text: "Monospaced system font",
-            font: .monospacedSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection), weight: .regular)
+            font: .monospacedSystemFont(ofSize: UIFont.labelFontSize,
+                                        weight: .regular).scaling(),
+            minimumContentSizeCategory: minSize,
+            maximumContentSizeCategory: maxSize
         )
     }
-    
-    static func monospacedDigitsSystemFont(for traitCollection: UITraitCollection) -> Self {
-        .init(
-            text: """
-Monospaced digits system font, 100
-""",
-            font: .monospacedDigitSystemFont(ofSize: UIFont.labelFontSize.scaled(for: traitCollection), weight: .regular)
-        )
+}
+
+extension UIFont {
+    func scaling(as style: UIFont.TextStyle = .body) -> UIFont {
+        UIFontMetrics(forTextStyle: style).scaledFont(for: self)
     }
 }
 

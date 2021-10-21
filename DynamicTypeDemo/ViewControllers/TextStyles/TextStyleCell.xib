@@ -9,32 +9,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="62" id="7RE-j5-yk7" customClass="TextStyleCell" customModule="DynamicTypeDemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="110" id="7RE-j5-yk7" customClass="TextStyleCell" customModule="DynamicTypeDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7RE-j5-yk7" id="fDh-br-yQs">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iio-ck-cc6">
-                        <rect key="frame" x="20" y="21" width="41.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ak2-o0-66Z">
+                        <rect key="frame" x="20" y="34.5" width="374" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iio-ck-cc6">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muj-Kx-81k">
+                                <rect key="frame" x="0.0" y="20.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iio-ck-cc6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fDh-br-yQs" secondAttribute="topMargin" id="2ih-mf-Z09"/>
-                    <constraint firstItem="iio-ck-cc6" firstAttribute="centerY" secondItem="fDh-br-yQs" secondAttribute="centerY" id="3gS-9l-L6I"/>
-                    <constraint firstItem="iio-ck-cc6" firstAttribute="leading" secondItem="fDh-br-yQs" secondAttribute="leadingMargin" id="AhG-Be-cBy"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="iio-ck-cc6" secondAttribute="bottom" id="E8U-eY-M7v"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="iio-ck-cc6" secondAttribute="trailing" id="LjG-0C-Zfs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ak2-o0-66Z" secondAttribute="trailing" id="2lM-Ua-3jy"/>
+                    <constraint firstItem="Ak2-o0-66Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fDh-br-yQs" secondAttribute="topMargin" id="Dlg-6z-3gU"/>
+                    <constraint firstItem="Ak2-o0-66Z" firstAttribute="leading" secondItem="fDh-br-yQs" secondAttribute="leadingMargin" id="wmA-gT-oZk"/>
+                    <constraint firstItem="Ak2-o0-66Z" firstAttribute="centerY" secondItem="fDh-br-yQs" secondAttribute="centerY" id="z2V-zc-NTK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="label" destination="iio-ck-cc6" id="p1R-Ii-VHX"/>
+                <outlet property="subtitle" destination="Muj-Kx-81k" id="um5-lg-Hy5"/>
+                <outlet property="title" destination="iio-ck-cc6" id="p1R-Ii-VHX"/>
             </connections>
-            <point key="canvasLocation" x="121.73913043478262" y="131.91964285714286"/>
+            <point key="canvasLocation" x="121.73913043478262" y="147.99107142857142"/>
         </tableViewCell>
     </objects>
 </document>
