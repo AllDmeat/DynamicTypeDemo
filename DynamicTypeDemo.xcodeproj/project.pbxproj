@@ -23,12 +23,8 @@
 		9CA732552716002F001C02EA /* StackViewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732542716002F001C02EA /* StackViewsController.swift */; };
 		9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */; };
 		9CBA388D2524A554001A33ED /* SwitchingAccessibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */; };
-		9CCA16652721E35100924D0C /* StackViewDefaultBehaviourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA16642721E35100924D0C /* StackViewDefaultBehaviourCell.swift */; };
-		9CCA16672721E36200924D0C /* StackViewDefaultBehaviourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CCA16662721E36200924D0C /* StackViewDefaultBehaviourCell.xib */; };
-		9CCA16762721EBF100924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA16752721EBBF00924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.swift */; };
-		9CCA16772721EBF100924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CCA16742721EBBF00924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.xib */; };
-		9CCA16782721EC7000924D0C /* StackViewRotateBehaviourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CCA16722721EBBF00924D0C /* StackViewRotateBehaviourCell.xib */; };
-		9CCA16792721EC7000924D0C /* StackViewRotateBehaviourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA16732721EBBF00924D0C /* StackViewRotateBehaviourCell.swift */; };
+		9CCA16762721EBF100924D0C /* StackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA16752721EBBF00924D0C /* StackViewCell.swift */; };
+		9CCA16772721EBF100924D0C /* StackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CCA16742721EBBF00924D0C /* StackViewCell.xib */; };
 		9CCB4AC825249FD200C7C0C1 /* UIView+LargeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB4AC725249FD200C7C0C1 /* UIView+LargeContent.swift */; };
 		9CCB4ACB2524A0D600C7C0C1 /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB4ACA2524A0D600C7C0C1 /* StateViewController.swift */; };
 		9CCB4ACE2524A11200C7C0C1 /* UIView+Pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB4ACD2524A11200C7C0C1 /* UIView+Pinning.swift */; };
@@ -53,12 +49,8 @@
 		9CA732542716002F001C02EA /* StackViewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewsController.swift; sourceTree = "<group>"; };
 		9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDefaultViewController.swift; sourceTree = "<group>"; };
 		9CBA388C2524A554001A33ED /* SwitchingAccessibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingAccessibleViewController.swift; sourceTree = "<group>"; };
-		9CCA16642721E35100924D0C /* StackViewDefaultBehaviourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewDefaultBehaviourCell.swift; sourceTree = "<group>"; };
-		9CCA16662721E36200924D0C /* StackViewDefaultBehaviourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackViewDefaultBehaviourCell.xib; sourceTree = "<group>"; };
-		9CCA16722721EBBF00924D0C /* StackViewRotateBehaviourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackViewRotateBehaviourCell.xib; sourceTree = "<group>"; };
-		9CCA16732721EBBF00924D0C /* StackViewRotateBehaviourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewRotateBehaviourCell.swift; sourceTree = "<group>"; };
-		9CCA16742721EBBF00924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackViewRotateAndScaleSpacingBehaviourCell.xib; sourceTree = "<group>"; };
-		9CCA16752721EBBF00924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewRotateAndScaleSpacingBehaviourCell.swift; sourceTree = "<group>"; };
+		9CCA16742721EBBF00924D0C /* StackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackViewCell.xib; sourceTree = "<group>"; };
+		9CCA16752721EBBF00924D0C /* StackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewCell.swift; sourceTree = "<group>"; };
 		9CCB4AC725249FD200C7C0C1 /* UIView+LargeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LargeContent.swift"; sourceTree = "<group>"; };
 		9CCB4ACA2524A0D600C7C0C1 /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
 		9CCB4ACD2524A11200C7C0C1 /* UIView+Pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pinning.swift"; sourceTree = "<group>"; };
@@ -156,46 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				9CA732542716002F001C02EA /* StackViewsController.swift */,
-				9CCA16682721E8EC00924D0C /* Cells */,
+				9CCA16742721EBBF00924D0C /* StackViewCell.xib */,
+				9CCA16752721EBBF00924D0C /* StackViewCell.swift */,
 			);
 			path = StackViews;
-			sourceTree = "<group>";
-		};
-		9CCA16682721E8EC00924D0C /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				9CCA16692721E8F300924D0C /* Default */,
-				9CCA166A2721E8FC00924D0C /* Rotate axis */,
-				9CCA16712721EBBF00924D0C /* Rotate axis and scale spacing */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		9CCA16692721E8F300924D0C /* Default */ = {
-			isa = PBXGroup;
-			children = (
-				9CCA16662721E36200924D0C /* StackViewDefaultBehaviourCell.xib */,
-				9CCA16642721E35100924D0C /* StackViewDefaultBehaviourCell.swift */,
-			);
-			path = Default;
-			sourceTree = "<group>";
-		};
-		9CCA166A2721E8FC00924D0C /* Rotate axis */ = {
-			isa = PBXGroup;
-			children = (
-				9CCA16722721EBBF00924D0C /* StackViewRotateBehaviourCell.xib */,
-				9CCA16732721EBBF00924D0C /* StackViewRotateBehaviourCell.swift */,
-			);
-			path = "Rotate axis";
-			sourceTree = "<group>";
-		};
-		9CCA16712721EBBF00924D0C /* Rotate axis and scale spacing */ = {
-			isa = PBXGroup;
-			children = (
-				9CCA16742721EBBF00924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.xib */,
-				9CCA16752721EBBF00924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.swift */,
-			);
-			path = "Rotate axis and scale spacing";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +220,7 @@
 				9C11AE0D27208F240003E338 /* TextStyleCell.xib in Resources */,
 				9C281556252499AA00A0D08B /* LaunchScreen.storyboard in Resources */,
 				9C281553252499AA00A0D08B /* Assets.xcassets in Resources */,
-				9CCA16772721EBF100924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.xib in Resources */,
-				9CCA16782721EC7000924D0C /* StackViewRotateBehaviourCell.xib in Resources */,
-				9CCA16672721E36200924D0C /* StackViewDefaultBehaviourCell.xib in Resources */,
+				9CCA16772721EBF100924D0C /* StackViewCell.xib in Resources */,
 				9C281551252499A700A0D08B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,16 +233,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C28154A252499A700A0D08B /* AppDelegate.swift in Sources */,
-				9CCA16652721E35100924D0C /* StackViewDefaultBehaviourCell.swift in Sources */,
 				9C11B406272096860003E338 /* UITableView+Helpers.swift in Sources */,
 				9C28181425249A1B00A0D08B /* CGFloat+Scaled.swift in Sources */,
 				9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */,
-				9CCA16762721EBF100924D0C /* StackViewRotateAndScaleSpacingBehaviourCell.swift in Sources */,
+				9CCA16762721EBF100924D0C /* StackViewCell.swift in Sources */,
 				9CCB4ACB2524A0D600C7C0C1 /* StateViewController.swift in Sources */,
 				9C11AE0B27208F0D0003E338 /* TextStyleCell.swift in Sources */,
 				9C28181E25249AE600A0D08B /* AccessibleStackView.swift in Sources */,
 				9C28154C252499A700A0D08B /* SceneDelegate.swift in Sources */,
-				9CCA16792721EC7000924D0C /* StackViewRotateBehaviourCell.swift in Sources */,
 				9CCB4ACE2524A11200C7C0C1 /* UIView+Pinning.swift in Sources */,
 				9CCB4AC825249FD200C7C0C1 /* UIView+LargeContent.swift in Sources */,
 				9CCB4AD12524A34400C7C0C1 /* SwitchingViewController.swift in Sources */,
