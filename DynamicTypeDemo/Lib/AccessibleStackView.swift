@@ -77,11 +77,7 @@ public final class AccessibleStackView: UIStackView {
     }
 
     private func updateDynamicSpacing(to contentSize: UIContentSizeCategory) {
-        guard dynamicSpacing else {
-            return
-        }
-
-        super.spacing = preferredSpacing.scaled(for: traitCollection)
+        super.spacing = dynamicSpacing ? preferredSpacing.scaled(for: traitCollection) : preferredSpacing
     }
 
     public override func didMoveToSuperview() {
