@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,6 @@
 		9C28181425249A1B00A0D08B /* CGFloat+Scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181325249A1B00A0D08B /* CGFloat+Scaled.swift */; };
 		9C28181B25249AC300A0D08B /* NSDynamicLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181A25249AC300A0D08B /* NSDynamicLayoutConstraint.swift */; };
 		9C28181E25249AE600A0D08B /* AccessibleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28181D25249AE600A0D08B /* AccessibleStackView.swift */; };
-		9CA7324E2715F5AA001C02EA /* ScrollingContentViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */; };
 		9CA732522715F79F001C02EA /* TextStylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732512715F79F001C02EA /* TextStylesViewController.swift */; };
 		9CA732552716002F001C02EA /* StackViewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA732542716002F001C02EA /* StackViewsController.swift */; };
 		9CBA388A2524A53F001A33ED /* SwitchingDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA38892524A53F001A33ED /* SwitchingDefaultViewController.swift */; };
@@ -62,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA7324E2715F5AA001C02EA /* ScrollingContentViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +169,6 @@
 			);
 			name = DynamicTypeDemo;
 			packageProductDependencies = (
-				9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */,
 			);
 			productName = DynamicTypeDemo;
 			productReference = 9C281546252499A700A0D08B /* DynamicTypeDemo.app */;
@@ -201,7 +198,6 @@
 			);
 			mainGroup = 9C28153D252499A700A0D08B;
 			packageReferences = (
-				9CA7324C2715F5AA001C02EA /* XCRemoteSwiftPackageReference "ScrollingContentViewController" */,
 			);
 			productRefGroup = 9C281547252499A700A0D08B /* Products */;
 			projectDirPath = "";
@@ -451,25 +447,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9CA7324C2715F5AA001C02EA /* XCRemoteSwiftPackageReference "ScrollingContentViewController" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/drewolbrich/ScrollingContentViewController.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9CA7324D2715F5AA001C02EA /* ScrollingContentViewController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9CA7324C2715F5AA001C02EA /* XCRemoteSwiftPackageReference "ScrollingContentViewController" */;
-			productName = ScrollingContentViewController;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9C28153E252499A700A0D08B /* Project object */;
 }

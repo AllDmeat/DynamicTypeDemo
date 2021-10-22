@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ScrollingContentViewController
 
 class TextStylesViewController: UITableViewController {
     private let factory = ViewModelFactory()
